@@ -11,16 +11,9 @@ export default class SimpleComponent extends Component {
     }
 
     handleToggle = () => {
-        if (this.state.toggle) {
-            this.setState({
-                toggle: false
-            })
-        }
-        else {
-            this.setState({
-                toggle: true
-            })
-        }
+        this.setState({
+            toggle : !this.state.toggle
+          })
     }
 
     handleCounter = () => {
@@ -29,10 +22,15 @@ export default class SimpleComponent extends Component {
                 count: this.state.count + 1
             })
         }
+        else{
+            this.setState({
+                count: this.state.count 
+            })
+        }
     }
 
     render() {
-
+        console.log("This is Simple Component")
         return (
             <>
                 <h1>Simple Component</h1>
